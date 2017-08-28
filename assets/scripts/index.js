@@ -12,3 +12,10 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 require('./example')
+
+const blogEvents = require('./events.js')
+
+$('#sign-up').on('submit', blogEvents.onSignup)
+$('#sign-in').on('submit', blogEvents.onSignIn)
+$('#sign-out').on('submit', blogEvents.onSignOut)
+$('#change-password').on('submit', blogEvents.onPasswordReset)

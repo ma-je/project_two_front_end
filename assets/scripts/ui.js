@@ -1,6 +1,6 @@
 'use strict'
 const app = require('./app.js')
-const blogEvents = require('.events.js')
+const blogEvents = require('./events.js')
 
 // if successfully signed up
 const onSignupSuccess = function () {
@@ -8,13 +8,35 @@ const onSignupSuccess = function () {
 }
 
 // if encounter error on signup
-const onSignupError = function () {
-  console.log('error')
+const onError = function (error) {
+  console.log(error)
+}
+// on sigin success
+const onSignInSuccess = function (data) {
+  console.log('signed in')
+  console.log(data)
+  app.user = data.user
+}
+// on sign out
+const onSignOutSuccess = function (data) {
+  console.log(data)
+  console.log('signed out')
+}
+const onSignOutFail = function (error) {
+  console.log(error)
+  console.log('Failed, please try again')
 }
 
-const signInSuccess =
+// resettting password
+const resetSuccess = function () {
+  console.log('password changed successfully')
+}
 
 module.exports = {
   onSignupSuccess,
-  onSignupError
+  onError,
+  onSignInSuccess,
+  onSignOutSuccess,
+  onSignOutFail,
+  resetSuccess
 }

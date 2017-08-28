@@ -1,9 +1,9 @@
 const app = require('./app.js')
 
-// to add a user - subscribe
+// to add a user - /signup/subscribe
 const addUser = function (data) {
   return $.ajax({
-    url: app.host + '/sign_up',
+    url: app.host + '/sign-up',
     method: 'POST',
     data: {
       'credentials': {
@@ -14,10 +14,10 @@ const addUser = function (data) {
     }
   })
 }
-// to sign in user
+// to sign/log in user
 const logInUser = function (data) {
   return $.ajax({
-    url: app.host + '/sign_in',
+    url: app.host + '/sign-in',
     method: 'POST',
     data: {
       'credentials': {
@@ -27,10 +27,10 @@ const logInUser = function (data) {
     }
   })
 }
-// to sign out user
+// to sign/log out user
 const logOut = function () {
   return $.ajax({
-    url: app.host + '/sign_out/' + app.user.id,
+    url: app.host + '/sign-out/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
@@ -40,7 +40,7 @@ const logOut = function () {
 // to change password
 const changePassword = function (data) {
   return $.ajax({
-    url: app.host + '/change_password/' + app.user.id,
+    url: app.host + '/change-password/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
