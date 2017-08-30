@@ -48,10 +48,73 @@ const changePassword = function (data) {
     data
   })
 }
+// create
+const newPost = function (data) {
+  return $.ajax({
+    url: app.host + '/posts/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'post': {
+        'title': data.title,
+        'content': data.content,
+        'user_id': 1
+      }
+    }
+  })
+}
+// new comment
+const newComment = function (data) {
+  return $.ajax({
+    url: app.host + '/comments/',
+    method: 'POST',
+    data: {
+      'comment': {
+        'title': data.title,
+        'content': data.content,
+        'user_id': data.user_id,
+        'post_id': data.post_id
+      }
+    },
 
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+// get posts
+const getPost = function (data) {
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/posts/',
+    method: 'GET',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+// add in other files
+const deletePost = function (data) {
+  return $.ajax({
+    url: app.host + 'posts' + app.post.id,
+    method: 'DELETE',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
 module.exports = {
   addUser,
   logInUser,
   logOut,
-  changePassword
+  changePassword,
+  newPost,
+  newComment,
+  getPost,
+  deletePost
 }

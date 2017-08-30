@@ -1,57 +1,22 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+Rui's Ruminations Blog
 
-# browser-template
+This blog was constructed on top of templates provided by General Assembly for front end as well as backend, therefore, it inherits all of the technologies built into the template (i.e., bootstrap, rails GEMS, etc)
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+This Blog doesn't have any particular focus; It is simply a place for the blogger(admin) to ruminate about anything. S/he could even ruminate about the creation of this app and how the compulsive rumination about this development process can lead to clinical disorder. Per Wiki, "Rumination is the focused attention on the symptoms of one's distress, and on its possible causes and consequences, as opposed to its solutions.[1] Both rumination and worry are associated with anxiety and other negative emotional states". Huh, perhaps, this could be the topic of the very first official blog post.
 
-## Installation
+This platform was created for someone who likes to share their perspectives on various topics.
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of your project.
-1.  Move into the new project and `git init`.
-1.  Install dependencies with `npm install`.
+This Blog allows only one user (the Admin) to post any articles. Perhaps at a later date, other users will be allowed to post. When you land on the page, the post article form is not accessible. If you are a registered admin user, you will see the form. For now, only the admin.
 
-## Structure
+Anyone can read the Blog, howerver, only subscribed users can post a comment.
+Currently, this functionality is not working. If a user tries to leave a comment they will ge an error message (400 bad request)
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+Features still to be added:
+* The remaining CRUD actions (specifically, UD)
+* Brining the data onto the browser window
 
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
+Would like to add:
+* social media buttons
+* perhaps an archive
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
-
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## [License](LICENSE)
-
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+link to app :

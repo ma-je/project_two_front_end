@@ -1,6 +1,7 @@
 const blogApi = require('./api.js')
 const blogUi = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields.js')
+const app = require('./app.js')
 
 // on successful signup
 const onSignup = function (event) {
@@ -41,10 +42,44 @@ const onPasswordReset = function (event) {
     .then(blogUi.resetSuccess)
     .catch(blogUi.onError)
 }
+// new posts
 
+const onPostSuccess = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log(data)
+  console.log('made it to events page')
+
+  blogApi.newPost(data)
+    .then(blogUi.onPostSuccess)
+    .catch(blogUi.onError)
+}
+// comments
+const onCommentSuccess = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  // console.log(data)
+  console.log('commented successfully')
+
+  blogApi.newComment(data)
+    .then(blogUi.commentSuccess)
+    .catch(blogUi.onError)
+}
+// get post
+const onGetPost = function (event) {
+  event.preventDefault()
+
+  const data = app.user
+  blogApi.getPost(data)
+    .then(blogUi.getPostSuccess)
+    .catch(blogUi.onError)
+}
 module.exports = {
   onSignup,
   onSignIn,
   onSignOut,
-  onPasswordReset
+  onPasswordReset,
+  onPostSuccess,
+  onCommentSuccess,
+  onGetPost
 }
