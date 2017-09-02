@@ -71,9 +71,16 @@ const onGetPost = function (event) {
 
   const data = app.user
   blogApi.getPost(data)
-    .then(blogUi.getPostSuccess)
+    .then(blogUi.getPostsSuccess)
     .catch(blogUi.onError)
 }
+// delete
+// const onDeletePostSuccess
+//   event.preventDefault()
+//   const data = app.data
+//   blogApi.deletePost(data)
+//     .then(blogUi.)
+
 module.exports = {
   onSignup,
   onSignIn,

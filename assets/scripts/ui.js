@@ -15,9 +15,9 @@ const onError = function (error) {
 const onSignInSuccess = function (data) {
   console.log('signed in')
   app.user = data.user
-  console.log(app.user) // outputs user id, email, token, admin
+  // console.log(app.user) // outputs user id, email, token, admin
   const admin = app.user.admin
-  console.log(admin)
+  // console.log(admin)
   if (admin === true) {
     $('#new-post').show()
   } else {
@@ -48,30 +48,16 @@ const onPostFailure = function (error) {
 }
 // new commentSuccess
 const onCommentSucess = function (data) {
-  console.log('successfully commented')
+  console.log('successfully submitted')
 }
 
 //  get post
-const getPostSuccess = function (data) {
+const getPostsSuccess = function (data) {
   app.data = data.user
-  // const xhr = new XMLHttpRequest()
-  //   xhr.open('GET', app.)
-  // '<div class = "p">'
-$('#user-post').empty()
-let output = ''
-for (let i in posts) {
-output +=
-      '<div class= "new-post">' +
-      '<ul>' +
-      '<li>title: ' + data.posts[i].title + '</li>' +
-      '<li>content: ' + data.posts[i].content + '</li>' +
-      '</ul>' +
-      '<div'
-  }
-  $('#get-post').show()
+  // console.log(app.data)
 
   console.log(data)
-  console.log(app.user.post)
+  // console.log(app.user.post)
 }
 module.exports = {
   onSignupSuccess,
@@ -81,7 +67,7 @@ module.exports = {
   onSignOutFail,
   resetSuccess,
   onPostSucess,
-  getPostSuccess,
+  getPostsSuccess,
   onCommentSucess,
   onPostFailure
 }

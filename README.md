@@ -11,9 +11,25 @@ This Blog allows only one user (the Admin) to post any articles. Perhaps at a la
 Anyone can read the Blog, howerver, only subscribed users can post a comment.
 Currently, this functionality is not working. If a user tries to leave a comment they will ge an error message (400 bad request)
 
+User Stories
+
+* As a commenter user, I’d like to be able to subscribe to the blog
+
+* As a commenter user, I’d like to be able to post comments on articles
+
+* As a commenter user, I’d like to be able to be able to change my
+  password
+
+* As an admin user, I’d like to be able to post new articles to the blog
+
+* As the admin user, I’d like to be the only one to be able to post articles
+
+* As a commenter user, I can only post a comment if I am signed in
+* 
+
 Features still to be added:
 * The remaining CRUD actions (specifically, UD)
-* Brining the data onto the browser window
+* Displaying the data onto the browser window
 
 Would like to add:
 * social media buttons

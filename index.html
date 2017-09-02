@@ -1,101 +1,119 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Rui's blog</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Rui's blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
 
-    <body>
-      <div class="container">
-
-  <nav class="navbar navbar-default">
+<body>
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-     </div>
+        </nav>
+    </div>
 
-     </nav>
-  <div id="who"class="container-fluid bg-1 text-center">
-<h1 class="margin">Rui's Ruminations</h1>
-<img src="http://i.imgur.com/h79zv9Y.jpg" class="" style="display:inline" alt="code">
-  <h3 class="who"></h3>
-  <!-- <h3 class="who">I'm a Front End Developer</h3> -->
-  </div>
+    <div id="who" class="container-fluid bg-1 text-center">
+      <h1 class="margin">Rui's Ruminations</h1>
+      <img src="http://i.imgur.com/h79zv9Y.jpg" class="" style="display:inline" alt="code">
+      <h3 class="who"></h3>
+
+    </div>
 
     <div class="container-fluid">
       <form id="sign-up">
-     <fieldset>
-       <legend></legend>
-       <input type="text" name="credentials[email]" value="" placeholder="email">
-       <input type="password" name="credentials[password]" value="" placeholder="password">
-       <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
-       <input type="submit" name="submit" value="Sign up!">
-     </fieldset>
-   </form>
+        <fieldset>
+          <legend></legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
 
-   <form id="sign-in">
-     <fieldset>
-       <legend></legend>
-       <input type="text" name="credentials[email]" value="" placeholder="email">
-       <input type="password" name="credentials[password]" value="" placeholder="password">
-       <input type="submit" name="submit" value="Sign in!">
-     </fieldset>
-   </form>
+      <form id="sign-in">
+        <fieldset>
+          <legend></legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
 
-   <form id="sign-out">
-     <fieldset>
-       <legend></legend>
-       <input type="submit" name="submit" value="Sign out">
-     </fieldset>
-   </form>
+      <form id="sign-out">
+        <fieldset>
+          <legend></legend>
+          <input type="submit" name="submit" value="Sign out">
+        </fieldset>
+      </form>
 
-   <form id="change-password">
-     <fieldset>
-       <legend></legend>
-       <input type="password" name="passwords[old]" value="" placeholder="Old Password">
-       <input type="password" name="passwords[new]" value="" placeholder="New Password">
-       <input type="submit" name="submit" value="Change Password">
-     </fieldset>
-   </form>
-   <div>
-     <form id="new-post">
-       <fieldset>
-         <legend><h6>Create New Post</h6></legend>
-         <input type="text" name="title" placeholder="Title">
-         <textarea name="content" id="content" cols="25" rows="3" placeholder="content"></textarea>
-         <input type="submit" name="submit" value="Post">
-       </fieldset>
-     </form>
-   </div>
- <form id="create-comment">
-           <fieldset>
-               <legend><h4>Comments</h4></legend>
-               <!-- <input type="string" placeholder="Title"> -->
-               <input type="text" placeholder="Comment">
-               <input type="submit" name="submit" value="Submit">
-             </fieldset>
-           </form>
-         </div>
+      <form id="change-password">
+        <fieldset>
+          <legend></legend>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password">
+        </fieldset>
+      </form>
+
+        <form id="new-post">
           <fieldset>
-         <button id="get-post" type="button" class="btn">Get Posts</button>
-         <br><br>
-         <div id="user-post">
-           <div class="title>"
-             <div class="content>"
-               <div class="comment>"
-                  <fieldset>
-         </div>
-    </body>
+            <legend>
+              <h6>Create New Post</h6></legend>
+            <input type="text" name="title" placeholder="Title">
+            <textarea name="content" id="content" cols="25" rows="3" placeholder="content"></textarea>
+            <input type="submit" name="submit" value="Post">
+          </fieldset>
+        </form>
+
+      <form id="create-comment">
+        <fieldset>
+          <legend>
+            <h4>Comments</h4></legend>
+          <!-- <input type="string" placeholder="Title"> -->
+          <input type="text" placeholder="Comment">
+          <input type="submit" name="submit" value="Submit">
+        </fieldset>
+      </form>
+
+    <fieldset>
+      <button id="get-post" type="button" class="btn">Get Posts</button>
+      <br><br>
+      <div id="user-post">
+        <div class="title">
+          <div class="content">
+            <div class="comment">
+    </fieldset>
+
+    <fieldset>
+      <div class="update-post">
+        <button id="edit-post" type="button" class="btn">Edit Post</button>
+        <input type="text" placehoder="Edit Post">
+        <input type="submit" name="submit" value="Edit Post">
+    </fieldset>
+
+    <fieldset>
+      <button id="delete-post" type="button" class="btn">Delete</button>
+      <br><br>
+      <div class="title">
+        <div class="content">
+    </fieldset>
+    </div>
+</body>
+
 </html>

@@ -1,6 +1,6 @@
 const app = require('./app.js')
 
-// to add a user - /signup/subscribe
+// to add a user - subscribe
 const addUser = function (data) {
   return $.ajax({
     url: app.host + '/sign-up',
@@ -14,7 +14,7 @@ const addUser = function (data) {
     }
   })
 }
-// to sign/log in user
+// to sign in user
 const logInUser = function (data) {
   return $.ajax({
     url: app.host + '/sign-in',
@@ -27,10 +27,10 @@ const logInUser = function (data) {
     }
   })
 }
-// to sign/log out user
+// to sign out user
 const logOut = function () {
   return $.ajax({
-    url: app.host + '/sign-out/' + app.user.id,
+    url: app.host + '/sign_out/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
@@ -40,7 +40,7 @@ const logOut = function () {
 // to change password
 const changePassword = function (data) {
   return $.ajax({
-    url: app.host + '/change-password/' + app.user.id,
+    url: app.host + '/change_password/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
@@ -48,73 +48,30 @@ const changePassword = function (data) {
     data
   })
 }
-// create
-const newPost = function (data) {
-  return $.ajax({
-    url: app.host + '/posts/',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    },
-    data: {
-      'post': {
-        'title': data.title,
-        'content': data.content,
-        'user_id': 1
-      }
-    }
-  })
-}
-// new comment
-const newComment = function (data) {
-  return $.ajax({
-    url: app.host + '/comments/',
-    method: 'POST',
-    data: {
-      'comment': {
-        'title': data.title,
-        'content': data.content,
-        'user_id': data.user_id,
-        'post_id': data.post_id
-      }
-    },
-
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    }
-  })
-}
-
-// get posts
+// get post
 const getPost = function (data) {
-  console.log(data)
   return $.ajax({
     url: app.host + '/posts/',
     method: 'GET',
-    data: data,
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    }
+    data
   })
 }
-// add in other files
-const deletePost = function (data) {
-  return $.ajax({
-    url: app.host + 'posts' + app.post.id,
-    method: 'DELETE',
-    data: data,
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    }
-  })
-}
+// delete a post
+// const deletePost = function () {
+//   return $.ajax({
+//     url: app.host + '/delete/' + app.data,
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token
+//     },
+//     method: 'DELETE'
+//   })
+// }
+
 module.exports = {
   addUser,
   logInUser,
   logOut,
   changePassword,
-  newPost,
-  newComment,
   getPost,
-  deletePost
+  // deletePost
 }
