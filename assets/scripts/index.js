@@ -29,7 +29,7 @@ $(document).ready(function () {
   $('#change-password').on('submit', blogEvents.onPasswordReset)
   $('#new-post').on('submit', blogEvents.onPostSuccess)
   $('#create-comment').on('submit', blogEvents.onCommentSuccess)
-  $('#get-post').click(blogEvents.onGetPost)
+  $('#get-post').click(blogEvents.onGetPostSuccess)
   // $('#update-post').on('submit', blogEvents.onEditSuccess)
   // $('#delete-post').click(blogEvents.deletePost)
 })

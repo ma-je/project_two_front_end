@@ -49,7 +49,6 @@ const onPostSuccess = function (event) {
   const data = getFormFields(this)
   console.log(data)
   console.log('made it to events page')
-
   blogApi.createPost(data)
     .then(blogUi.onPostSuccess)
     .catch(blogUi.onError)
@@ -60,7 +59,6 @@ const onCommentSuccess = function (event) {
   const data = getFormFields(this)
   // console.log(data)
   console.log('commented successfully')
-
   blogApi.newComment(data)
     .then(blogUi.commentSuccess)
     .catch(blogUi.onError)
@@ -68,7 +66,6 @@ const onCommentSuccess = function (event) {
 // get post
 const onGetPostSuccess = function (event) {
   event.preventDefault()
-
   const data = app.user
   blogApi.getPost(data)
     .then(blogUi.getPostsSuccess)
@@ -92,5 +89,6 @@ module.exports = {
   onPasswordReset,
   onPostSuccess,
   onCommentSuccess,
-  onGetPostSuccess
+  onGetPostSuccess,
+  onEditPostSuccess
 }

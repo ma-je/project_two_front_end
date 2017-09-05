@@ -53,12 +53,24 @@ const onCommentSucess = function (data) {
 }
 
 //  get post
+
+const loopPosts = function (data) {
+  console.log(data.posts.length)
+
+  for (let i = 0; i < data.posts.length; i++) {
+    $('#posts-section').append(
+      '<div> ' +
+      '<h2>' + data.posts[i].title + '</h2>' +
+      '<p>' + data.posts[i].content + '</p>' +
+      '</div>'
+    )
+  }
+}
+
 const getPostsSuccess = function (data) {
   app.data = data.user
-  // console.log(app.data)
-
-  console.log(data)
-  // console.log(app.user.post)
+  // const posts = data.posts
+  $('#get-post').click(loopPosts(data))
 }
 module.exports = {
   onSignupSuccess,
