@@ -50,7 +50,7 @@ const onPostSuccess = function (event) {
   console.log(data)
   console.log('made it to events page')
 
-  blogApi.newPost(data)
+  blogApi.createPost(data)
     .then(blogUi.onPostSuccess)
     .catch(blogUi.onError)
 }
@@ -66,13 +66,17 @@ const onCommentSuccess = function (event) {
     .catch(blogUi.onError)
 }
 // get post
-const onGetPost = function (event) {
+const onGetPostSuccess = function (event) {
   event.preventDefault()
 
   const data = app.user
   blogApi.getPost(data)
     .then(blogUi.getPostsSuccess)
     .catch(blogUi.onError)
+}
+// edit post
+const onEditPostSuccess = function (event) {
+  event.preventDefault()
 }
 // delete
 // const onDeletePostSuccess
@@ -88,5 +92,5 @@ module.exports = {
   onPasswordReset,
   onPostSuccess,
   onCommentSuccess,
-  onGetPost
+  onGetPostSuccess
 }

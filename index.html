@@ -17,7 +17,7 @@
 <body>
   <div class="container">
 
-    <nav class="navbar navbar-default">
+    <!-- <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -26,94 +26,113 @@
         <span class="icon-bar"></span>
       </button>
         </nav>
-    </div>
+    </div> -->
 
-    <div id="who" class="container-fluid bg-1 text-center">
-      <h1 class="margin">Rui's Ruminations</h1>
-      <img src="http://i.imgur.com/h79zv9Y.jpg" class="" style="display:inline" alt="code">
-      <h3 class="who"></h3>
+    <div id="what" class="container-fluid bg-1 text-center">
+      <h1 class="margin">Welcome to Rui's Ruminations</h1>
+      <h4>A blog about the news and events Rui has ruminated about this week </h4>
 
-    </div>
+      <img src="http://i.imgur.com/h79zv9Y.jpg" class="" style="display:inline" alt="cascading water">
 
-    <div class="container-fluid">
+
+
+      <table>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <!-- sign up form -->
       <form id="sign-up">
         <fieldset>
-          <legend></legend>
+          <legend>Join</legend>
           <input type="text" name="credentials[email]" value="" placeholder="email">
           <input type="password" name="credentials[password]" value="" placeholder="password">
           <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
-          <input type="submit" name="submit" value="Sign up!">
+          <p id='joinError' class='error-message hidden'>Something went wrong.Please try again</p>
+          <input type="submit" class="submit-button" name="submit" value="Join!">
         </fieldset>
       </form>
-
+      <!--sign in -->
       <form id="sign-in">
         <fieldset>
           <legend></legend>
           <input type="text" name="credentials[email]" value="" placeholder="email">
           <input type="password" name="credentials[password]" value="" placeholder="password">
+          <p id='signInError' class='error-message hidden'>Invalid Username or Password</p>
           <input type="submit" name="submit" value="Sign in!">
         </fieldset>
       </form>
-
+      <!--sign out -->
       <form id="sign-out">
         <fieldset>
-          <legend></legend>
           <input type="submit" name="submit" value="Sign out">
+          <p id="sign-out-success" class="hidden">Signed Out!</p>
         </fieldset>
       </form>
-
+      <!--change password -->
       <form id="change-password">
         <fieldset>
           <legend></legend>
           <input type="password" name="passwords[old]" value="" placeholder="Old Password">
           <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <p id='passWordChangeSuccess' class='success-message hidden'>Password Successfully Changed</p>
           <input type="submit" name="submit" value="Change Password">
         </fieldset>
       </form>
-
-        <form id="new-post">
-          <fieldset>
-            <legend>
-              <h6>Create New Post</h6></legend>
-            <input type="text" name="title" placeholder="Title">
-            <textarea name="content" id="content" cols="25" rows="3" placeholder="content"></textarea>
-            <input type="submit" name="submit" value="Post">
-          </fieldset>
-        </form>
-
+      <!--new post-->
+      <form id="new-post">
+        <fieldset>
+          <legend>New Post</legend>
+          <h4>Create New Post</h4></legend>
+          <input type="text" name="title" placeholder="Title">
+          <textarea name="content" id="content" cols="25" rows="3" placeholder="content"></textarea>
+          <input type="submit" name="submit" value="Post">
+        </fieldset>
+      </form>
+      <!--create comments-->
       <form id="create-comment">
         <fieldset>
-          <legend>
-            <h4>Comments</h4></legend>
+            <legend><h4>Leave a Comment</h4></legend>
           <!-- <input type="string" placeholder="Title"> -->
           <input type="text" placeholder="Comment">
           <input type="submit" name="submit" value="Submit">
         </fieldset>
       </form>
-
-    <fieldset>
-      <button id="get-post" type="button" class="btn">Get Posts</button>
-      <br><br>
-      <div id="user-post">
-        <div class="title">
-          <div class="content">
-            <div class="comment">
-    </fieldset>
-
-    <fieldset>
-      <div class="update-post">
-        <button id="edit-post" type="button" class="btn">Edit Post</button>
-        <input type="text" placehoder="Edit Post">
-        <input type="submit" name="submit" value="Edit Post">
-    </fieldset>
-
-    <fieldset>
-      <button id="delete-post" type="button" class="btn">Delete</button>
-      <br><br>
-      <div class="title">
-        <div class="content">
-    </fieldset>
-    </div>
-</body>
+      <!--get posts -->
+      <button id="get-post" class="hidden btn sub-button">Get Posts</button>
+      <table id="getPost" class="hidden">
+        <tr>
+          <th>post id</th>
+          <th>title</th>
+          <th>comment</th>
+        </tr>
+<!--update posts -->
+      <form id="update-post">
+        <fieldset>
+          <legend>Edit Post</legend>
+            <input type="number" name="id" placeholder="id">
+              <input type="text" name="title" placeholder="Title">
+              <textarea name="content" cols="25" rows="3" placeholder=" New Content"></textarea>
+              <input type="submit" name="submit" class="btn-default" value="Post!">
+            </fieldset>
+          </form>
+<!-- delete posts -->
+        <fieldset>
+          <button id="delete-post" type="button" class="btn">Delete</button>
+          <br><br>
+          <div class="title">
+            <div class="content">
+        </fieldset>
+        </div>
+      </body>
 
 </html>

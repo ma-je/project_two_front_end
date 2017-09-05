@@ -5,6 +5,7 @@ const blogEvents = require('./events.js')
 // if successfully signed up
 const onSignupSuccess = function () {
   console.log('Welcome to my blog!')
+  $('#sign-up input').not('.submit-button').val('')
 }
 
 // if encounter error on signup

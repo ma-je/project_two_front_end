@@ -14,6 +14,11 @@ $(() => {
 require('./example')
 
 const blogEvents = require('./events.js')
+// const commentersAccess = () => {
+//   $('#sign-up').addClass('hidden')
+//   $('#sign-in').removeClass('hidden')
+// }
+
 $(document).ready(function () {
   $('#change-password').hide()
   $('#new-post').hide()
@@ -25,5 +30,10 @@ $(document).ready(function () {
   $('#new-post').on('submit', blogEvents.onPostSuccess)
   $('#create-comment').on('submit', blogEvents.onCommentSuccess)
   $('#get-post').click(blogEvents.onGetPost)
-  $('delete-post').click(blogEvents.deletePost)
+  // $('#update-post').on('submit', blogEvents.onEditSuccess)
+  // $('#delete-post').click(blogEvents.deletePost)
 })
+// $(document).on('click', '#commentButton', function () {
+//   blogEvents.onCreateComment()
+// })
+// $(document).on('click', '.delete-post', blogEvents.onDeletePost)
