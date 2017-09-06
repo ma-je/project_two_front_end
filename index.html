@@ -87,19 +87,21 @@
         <fieldset>
             <legend><h4>Leave a Comment</h4></legend>
           <!-- <input type="string" placeholder="Title"> -->
-          <input type="text" placeholder="Comment">
+          <input type="text" placeholder="add your comments here">
           <input type="submit" name="submit" value="Submit">
         </fieldset>
       </form>
       <!--get posts -->
       <button id="get-post">Get Posts</button>
-<!--update posts -->
+
+<!--edit/update posts -->
       <form id="edit-post">
         <fieldset>
           <legend><h4>Edit Post</h4></legend>
               <input type="text" name="title" placeholder="Title">
-              <textarea name="content" cols="25" rows="3" placeholder=" New Content"></textarea>
+              <textarea name="content" cols="25" rows="3" placeholder=" edit content"></textarea>
               <input type="submit" name="submit" class="btn-default" value="Submit edits">
+              <input type="hidden" id="postId" name="post[post_id]" value="">
             </fieldset>
           </form>
 <!-- delete posts -->

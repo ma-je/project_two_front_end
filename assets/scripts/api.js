@@ -131,7 +131,8 @@ module.exports = {
   logOut,
   changePassword,
   createPost,
-  getPost
+  getPost,
+  editPost
   // createComment
   // editPost,
   // deletePost,

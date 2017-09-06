@@ -8,7 +8,7 @@ const onSignupSuccess = function () {
   $('#sign-up input').not('.submit-button').val('')
 }
 
-// if encounter error on signup
+// if encounter error on signup or other functions
 const onError = function (error) {
   console.log(error)
 }
@@ -23,18 +23,21 @@ const onSignInSuccess = function (data) {
     $('#new-post').show()
   } else {
     $('#new-post').hide()
+    // $('#create-comment').show()
+    // $('#create-comment').hide()
   }
-}// on sign out
+}
+// on sign out
 const onSignOutSuccess = function (data) {
   console.log(data)
   console.log('signed out')
 }
-const onSignOutFail = function (error) {
-  console.log(error)
-  console.log('Failed, please try again')
-}
+// const onSignOutFail = function (error) {
+//   console.log(error)
+//   console.log('Failed, please try again')
+// }
 
-// resettting password
+// resettting/changing the password
 const resetSuccess = function () {
   console.log('password changed successfully')
 }
@@ -44,9 +47,9 @@ const onPostSucess = function (data) {
   console.log('successfully posted')
 }
 // if create post fails
-const onPostFailure = function (error) {
-  console.log(error)
-}
+// const onPostFailure = function (error) {
+//   console.log(error)
+// }
 // new commentSuccess
 const onCommentSucess = function (data) {
   console.log('successfully submitted')
@@ -71,16 +74,21 @@ const getPostsSuccess = function (data) {
   app.data = data.user
   // const posts = data.posts
   $('#get-post').click(loopPosts(data))
+
+  // const onEditPostSuccess = function (data) {
+  //   console.log('Post has been edited')
+  // }
 }
 module.exports = {
   onSignupSuccess,
   onError,
   onSignInSuccess,
   onSignOutSuccess,
-  onSignOutFail,
+  // onSignOutFail,
   resetSuccess,
   onPostSucess,
   getPostsSuccess,
-  onCommentSucess,
-  onPostFailure
+  onCommentSucess
+  // onEditPostSuccess
+  // onPostFailure
 }

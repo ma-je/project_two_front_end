@@ -71,10 +71,14 @@ const onGetPostSuccess = function (event) {
     .then(blogUi.getPostsSuccess)
     .catch(blogUi.onError)
 }
-// edit post
-const onEditPostSuccess = function (event) {
-  event.preventDefault()
-}
+// editing post
+// const onEditPostSuccess = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(this)
+//   blogApi.editPost(data)
+//     .then(blogUi.onEditPostsSuccess)
+//     .catch(blogUi.onError)
+// }
 // delete
 // const onDeletePostSuccess
 //   event.preventDefault()
@@ -90,5 +94,5 @@ module.exports = {
   onPostSuccess,
   onCommentSuccess,
   onGetPostSuccess,
-  onEditPostSuccess
+  // onEditPostSuccess
 }

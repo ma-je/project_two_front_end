@@ -30,7 +30,7 @@ $(document).ready(function () {
   $('#new-post').on('submit', blogEvents.onPostSuccess)
   $('#create-comment').on('submit', blogEvents.onCommentSuccess)
   $('#get-post').click(blogEvents.onGetPostSuccess)
-  // $('#update-post').on('submit', blogEvents.onEditSuccess)
+  // $('#edit-post').on('submit', blogEvents.onEditSuccess)
   // $('#delete-post').click(blogEvents.deletePost)
 })
 // $(document).on('click', '#commentButton', function () {
