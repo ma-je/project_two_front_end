@@ -30,6 +30,12 @@ $(document).ready(function () {
   $('#new-post').on('submit', blogEvents.onPostSuccess)
   $('#create-comment').on('submit', blogEvents.onCommentSuccess)
   $('#get-post').click(blogEvents.onGetPostSuccess)
+  //$('.delete-post').click(blogEvents.onDeletePostSuccess)
+  $(document).on('click', '.delete-post', function(){
+    event.preventDefault()
+    let delete_id = $(this).attr('id')
+    blogEvents.onDeletePostSuccess(delete_id)
+  })
   // $('#edit-post').on('submit', blogEvents.onEditSuccess)
   // $('#delete-post').click(blogEvents.deletePost)
 })

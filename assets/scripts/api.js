@@ -98,15 +98,15 @@ const editPost = function (data) {
 }
 
 // delete a post
-// const deletePost = function (deletePostId) {
-//   return $.ajax({
-//     url: app.host + '/posts/' + deletePostId,
-//        method: 'DELETE',
-//        headers: {
-//          Authorization: 'Token token=' + app.user.token
-//     }
-//   })
-// }
+const deletePost = function (delete_id) {
+  return $.ajax({
+    url: app.host + '/posts/' + delete_id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
 // create comments
 // const createComment = function (data) {
 //   return $.ajax({
@@ -132,7 +132,8 @@ module.exports = {
   changePassword,
   createPost,
   getPost,
-  editPost
+  editPost,
+  deletePost
   // createComment
   // editPost,
   // deletePost,

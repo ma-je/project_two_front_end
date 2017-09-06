@@ -32,10 +32,6 @@ const onSignOutSuccess = function (data) {
   console.log(data)
   console.log('signed out')
 }
-// const onSignOutFail = function (error) {
-//   console.log(error)
-//   console.log('Failed, please try again')
-// }
 
 // resettting/changing the password
 const resetSuccess = function () {
@@ -46,17 +42,13 @@ const onPostSucess = function (data) {
   app.data = data.post
   console.log('successfully posted')
 }
-// if create post fails
-// const onPostFailure = function (error) {
-//   console.log(error)
-// }
+
 // new commentSuccess
 const onCommentSucess = function (data) {
   console.log('successfully submitted')
 }
 
-//  get post
-
+//  get posts
 const loopPosts = function (data) {
   console.log(data.posts.length)
 
@@ -65,6 +57,8 @@ const loopPosts = function (data) {
       '<div> ' +
       '<h2>' + data.posts[i].title + '</h2>' +
       '<p>' + data.posts[i].content + '</p>' +
+      '<p hidden>' + data.posts[i].id + '<p>' +
+      '<button class="delete-post" id="' + data.posts[i].id + '" type="button" class="btn">Delete Post</button>' +
       '</div>'
     )
   }
@@ -79,6 +73,11 @@ const getPostsSuccess = function (data) {
   //   console.log('Post has been edited')
   // }
 }
+
+// delete posts
+const deletePostSuccess = function (data) {
+  console.log('Post deleted')
+}
 module.exports = {
   onSignupSuccess,
   onError,
@@ -88,7 +87,8 @@ module.exports = {
   resetSuccess,
   onPostSucess,
   getPostsSuccess,
-  onCommentSucess
+  onCommentSucess,
+  deletePostSuccess
   // onEditPostSuccess
   // onPostFailure
 }
