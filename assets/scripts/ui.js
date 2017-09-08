@@ -16,6 +16,8 @@ const onError = function (error) {
 const onSignInSuccess = function (data) {
   console.log('signed in')
   app.user = data.user
+  console.log(app.user)
+  $('#sign-in input').not('.submit-btn').val('')
   // console.log(app.user) // outputs user id, email, token, admin
   const admin = app.user.admin
   // console.log(admin)
@@ -41,6 +43,7 @@ const resetSuccess = function () {
 const onPostSucess = function (data) {
   app.data = data.post
   console.log('successfully posted')
+  $('#new-post input').not('.submit-button').val('')
 }
 
 // new commentSuccess
@@ -50,6 +53,7 @@ const onCommentSucess = function (data) {
 
 //  get posts
 const loopPosts = function (data) {
+  console.log(data)
   console.log(data.posts.length)
 
   for (let i = 0; i < data.posts.length; i++) {
@@ -57,8 +61,9 @@ const loopPosts = function (data) {
       '<div> ' +
       '<h2>' + data.posts[i].title + '</h2>' +
       '<p>' + data.posts[i].content + '</p>' +
-      '<p hidden>' + data.posts[i].id + '<p>' +
-      '<button class="delete-post" id="' + data.posts[i].id + '" type="button" class="btn">Delete Post</button>' +
+      '<p>' + data.posts[i].id + '<p>' +
+      '<button class="delete-post" id="' + data.posts[i].id + '" type="button" class="btn">Delete</button>' +
+      '<button class="edit-post" id="' + data.posts[i].id + '" type="button" class="btn">Edit</button>' +
       '</div>'
     )
   }
@@ -68,11 +73,12 @@ const getPostsSuccess = function (data) {
   app.data = data.user
   // const posts = data.posts
   $('#get-post').click(loopPosts(data))
-
-  // const onEditPostSuccess = function (data) {
-  //   console.log('Post has been edited')
-  // }
 }
+  // edit/update posts
+const editPostSuccess = function (data) {
+    console.log('Post has been edited')
+  }
+
 
 // delete posts
 const deletePostSuccess = function (data) {
@@ -83,12 +89,10 @@ module.exports = {
   onError,
   onSignInSuccess,
   onSignOutSuccess,
-  // onSignOutFail,
+  editPostSuccess,
   resetSuccess,
   onPostSucess,
   getPostsSuccess,
   onCommentSucess,
   deletePostSuccess
-  // onEditPostSuccess
-  // onPostFailure
 }

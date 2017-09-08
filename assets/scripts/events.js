@@ -73,20 +73,22 @@ const onGetPostSuccess = function (event) {
 }
 // editing post
 const onEditPostSuccess = function (event) {
-  const data = getFormFields(this)
-  let edit_id = data.post.post_id
-  console.log(data)
   event.preventDefault()
-  blogApi.editPost(data)
-    .then(blogUi.onEditPostsSuccess)
+  // const data = getFormFields(this)
+  const title = $('#edit-post-title').val()
+  const content = $('#edit-post-content').val()
+  const id = $('#edit-post-id').val()
+  // console.log(data)
+  blogApi.editPost(title, content, id)
+    .then(blogUi.editPostSuccess)
     .catch(blogUi.onError)
 }
 // delete posts
 
-const onDeletePostSuccess = function (delete_id) {
+const onDeletePostSuccess = function (deleteId) {
   // let post_id = $('#postId').val()
-  console.log(delete_id)
-  blogApi.deletePost(delete_id)
+  console.log(deleteId)
+  blogApi.deletePost(deleteId)
     .then(blogUi.DeletPostSuccess)
     .catch(blogUi.onError)
 }
@@ -99,6 +101,6 @@ module.exports = {
   onPostSuccess,
   onCommentSuccess,
   onGetPostSuccess,
-  onDeletePostSuccess
-  // onEditPostSuccess
+  onDeletePostSuccess,
+  onEditPostSuccess
 }

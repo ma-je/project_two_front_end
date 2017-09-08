@@ -14,14 +14,12 @@ $(() => {
 require('./example')
 
 const blogEvents = require('./events.js')
-// const commentersAccess = () => {
-//   $('#sign-up').addClass('hidden')
-//   $('#sign-in').removeClass('hidden')
-// }
 
 $(document).ready(function () {
   $('#change-password').hide()
   $('#new-post').hide()
+  // hiding upon page load
+  $('#edit-post').hide()
   // $('#sign-out').hide()
   $('#sign-up').on('submit', blogEvents.onSignup)
   $('#sign-in').on('submit', blogEvents.onSignIn)
@@ -30,11 +28,20 @@ $(document).ready(function () {
   $('#new-post').on('submit', blogEvents.onPostSuccess)
   $('#create-comment').on('submit', blogEvents.onCommentSuccess)
   $('#get-post').click(blogEvents.onGetPostSuccess)
-  //$('.delete-post').click(blogEvents.onDeletePostSuccess)
-  $(document).on('click', '.delete-post', function(){
+  $('#edit-post').on('submit', blogEvents.onEditPostSuccess)
+
+  // $('.delete-post').click(blogEvents.onDeletePostSuccess)
+  $(document).on('click', '.delete-post', function () {
     event.preventDefault()
-    let delete_id = $(this).attr('id')
-    blogEvents.onDeletePostSuccess(delete_id)
+    const deleteId = $(this).attr('id')
+    blogEvents.onDeletePostSuccess(deleteId)
+  })
+
+  $(document).on('click', '.edit-post', function () {
+    event.preventDefault()
+    const editId = $(this).attr('id')
+    $('#postId').val(editId)
+    $('#edit-post').show()
   })
   // $('#edit-post').on('submit', blogEvents.onEditSuccess)
   // $('#delete-post').click(blogEvents.deletePost)

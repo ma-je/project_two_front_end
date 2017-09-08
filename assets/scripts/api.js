@@ -71,18 +71,24 @@ const createPost = function (data) {
   })
 }
 // get post
-const getPost = function (data) {
+const getPost = function () {
   return $.ajax({
     url: app.host + '/posts/',
     method: 'GET',
-    data
+    headers: {
+      Authorizaton: 'Token token=' + app.user.token
+    }
   })
 }
 // edit posts
-const editPost = function (data) {
-  console.log(app.user.id, data.title, data.content)
+const editPost = function (title, content, id) {
+  // console.log(data)
+  // console.log(data.title, data.content)
+  // console.log(app.user)
+  // console.log('got this post', app.user.token)
+
   return $.ajax({
-    url: app.host + 'posts' + data.id,
+    url: app.host + '/posts/' + id,
     method: 'PATCH',
     headers: {
       Authorizaton: 'Token token=' + app.user.token
@@ -90,17 +96,17 @@ const editPost = function (data) {
     data: {
       'post': {
         'user_id': app.user.id,
-        'title': data.title,
-        'content': data.content
+        'title': title,
+        'content': content
       }
     }
   })
 }
 
 // delete a post
-const deletePost = function (delete_id) {
+const deletePost = function (deleteId) {
   return $.ajax({
-    url: app.host + '/posts/' + delete_id,
+    url: app.host + '/posts/' + deleteId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -135,6 +141,5 @@ module.exports = {
   editPost,
   deletePost
   // createComment
-  // editPost,
   // deletePost,
 }
