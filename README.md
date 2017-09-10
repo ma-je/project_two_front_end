@@ -39,6 +39,8 @@ link to wireframes :https://imgur.com/UPOaHmq
 
 links to app: https://github.com/ma-je/Blog-api
 https://github.com/ma-je/project_two_front_end
+https://ma-je.github.io/project_two_front_end/
+
 
 herokuapp link: https://dashboard.heroku.com/apps/project-two-blog
 
