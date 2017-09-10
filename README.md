@@ -27,10 +27,13 @@ User Stories
 *
 
 Features still to be added:
-* The ability to edit post and all features related to the ability to comment on posts
+* The ability to edit post and all features related to the ability to comment on posts. I am able to make updates in the console, however, not within the browser (yet).
 
 Would like to add:
 * social media buttons
 * perhaps an archive
 
-link to app :
+link to wireframes :https://imgur.com/thJxNDf
+https://imgur.com/UPOaHmq
+
+link to app: https://github.com/ma-je/Blog-api

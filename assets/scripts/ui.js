@@ -55,7 +55,7 @@ const onCommentSucess = function (data) {
 const loopPosts = function (data) {
   console.log(data)
   console.log(data.posts.length)
-
+  $('#posts-section').empty()
   for (let i = 0; i < data.posts.length; i++) {
     $('#posts-section').append(
       '<div> ' +
@@ -76,6 +76,7 @@ const getPostsSuccess = function (data) {
 }// edit/update posts
 const editPostSuccess = function (data) {
   console.log('Post has been edited')
+  console.log('you have reached ui.js update-posts')
 }
 // delete posts
 const deletePostSuccess = function (data) {

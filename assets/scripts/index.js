@@ -38,6 +38,7 @@ $(document).ready(function () {
   })
 
   $(document).on('click', '.edit-post', function () {
+    console.log('you have clicked update-posts')
     event.preventDefault()
     const editId = $(this).attr('id')
     $('#postId').val(editId)

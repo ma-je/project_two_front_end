@@ -78,6 +78,7 @@ const onEditPostSuccess = function (event) {
   const title = $('#edit-post-title').val()
   const content = $('#edit-post-content').val()
   const id = $('#edit-post-id').val()
+  console.log('you have reached events.js update-posts')
   // console.log(data)
   blogApi.editPost(title, content, id)
     .then(blogUi.editPostSuccess)

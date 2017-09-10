@@ -82,11 +82,7 @@ const getPost = function () {
 }
 // edit posts
 const editPost = function (title, content, id) {
-  // console.log(data)
-  // console.log(data.title, data.content)
-  // console.log(app.user)
-  // console.log('got this post', app.user.token)
-  // console.log(app.user.token)
+  console.log('you have reached api.js update-posts')
   return $.ajax({
     url: app.host + '/posts/' + id,
     method: 'PATCH',
