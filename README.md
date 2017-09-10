@@ -29,6 +29,8 @@ User Stories
 Features still to be added:
 * The ability to edit post and all features related to the ability to comment on posts. I am able to make updates in the console, however, not within the browser (yet).
 
+Major bug: After days of trying to get the edit post to work (consulting with Dr. google, consultants, former students, current students), I realized that I needed to move this up the chain the senior developers. The code appears to be correct, however, for some reason the 401 unauthorized error message persists.
+
 Would like to add:
 * social media buttons
 * perhaps an archive
@@ -37,6 +39,8 @@ link to wireframes :https://imgur.com/UPOaHmq
 
 links to app: https://github.com/ma-je/Blog-api
 https://github.com/ma-je/project_two_front_end
+
+herokuapp link: https://dashboard.heroku.com/apps/project-two-blog
 
 License
 1. All content is licensed under a CC BY NC SA 4.0 license.
