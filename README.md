@@ -8,28 +8,26 @@ This platform was created for someone who likes to share their perspectives on v
 
 This Blog allows only one user (the Admin) to post any articles. Perhaps at a later date, other users will be allowed to post. When you land on the page, the post article form is not accessible. If you are a registered admin user, you will see the form. For now, only the admin.
 
-Anyone can read the Blog, howerver, only subscribed users can post a comment.
-Currently, this functionality is not working. If a user tries to leave a comment they will ge an error message (400 bad request)
+The original intent was to allow anyone to read the Blog, however, only subscribed users can post a comment. Due to time constraints, this functionality had to be tabled. The plan is to revisit this at a later date.
 
 User Stories
 
-* As a commenter user, I’d like to be able to subscribe to the blog
+* As a user, I’d like to be able to subscribe to the blog
 
-* As a commenter user, I’d like to be able to post comments on articles
+* As a user, I’d like to be able to post comments on articles (this is tabled for later deploy)
 
-* As a commenter user, I’d like to be able to be able to change my
+* As a user, I’d like to be able to be able to change my
   password
 
-* As an admin user, I’d like to be able to post new articles to the blog
+* As an admin user, I’d like to be able to post new articles to the blog (the admin credentials for testing are mmonteiro gmail address and pwd = test)
 
 * As the admin user, I’d like to be the only one to be able to post articles
 
-* As a commenter user, I can only post a comment if I am signed in
-* 
+* As a user, I can only post a comment if I am signed in (see issues concerning comments above)
+*
 
 Features still to be added:
-* The remaining CRUD actions (specifically, UD)
-* Displaying the data onto the browser window
+* The ability to edit post and all features related to the ability to comment on posts
 
 Would like to add:
 * social media buttons

@@ -86,7 +86,7 @@ const editPost = function (title, content, id) {
   // console.log(data.title, data.content)
   // console.log(app.user)
   // console.log('got this post', app.user.token)
-
+  // console.log(app.user.token)
   return $.ajax({
     url: app.host + '/posts/' + id,
     method: 'PATCH',

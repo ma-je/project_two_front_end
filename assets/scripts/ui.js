@@ -73,13 +73,10 @@ const getPostsSuccess = function (data) {
   app.data = data.user
   // const posts = data.posts
   $('#get-post').click(loopPosts(data))
-}
-  // edit/update posts
+}// edit/update posts
 const editPostSuccess = function (data) {
-    console.log('Post has been edited')
-  }
-
-
+  console.log('Post has been edited')
+}
 // delete posts
 const deletePostSuccess = function (data) {
   console.log('Post deleted')
