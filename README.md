@@ -33,7 +33,7 @@ Would like to add:
 * social media buttons
 * perhaps an archive
 
-link to wireframes :https://imgur.com/thJxNDf
-https://imgur.com/UPOaHmq
+link to wireframes :https://imgur.com/UPOaHmq
 
-link to app: https://github.com/ma-je/Blog-api
+links to app: https://github.com/ma-je/Blog-api
+https://github.com/ma-je/project_two_front_end
