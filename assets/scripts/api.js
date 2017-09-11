@@ -30,7 +30,7 @@ const logInUser = function (data) {
 // to sign out user
 const logOut = function () {
   return $.ajax({
-    url: app.host + '/sign_out/' + app.user.id,
+    url: app.host + '/sign-out/' + app.user.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -38,19 +38,14 @@ const logOut = function () {
   })
 }
 // to change password
-const changePassword = function (data) {
+const resetPassword = function (data) {
   return $.ajax({
-    url: app.host + '/change_password/' + app.user.id,
     method: 'PATCH',
+    url: app.host + '/change-password/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
-    data: {
-      'passwords': {
-        'old': data.credentials.old,
-        'new': data.credentials.new
-      }
-    }
+    data: data
   })
 }
 // creat posts
@@ -81,19 +76,18 @@ const getPost = function () {
   })
 }
 // edit posts
-const editPost = function (title, content, id) {
-  console.log('you have reached api.js update-posts')
+const editPost = function (data) {
+  // console.log('you have reached api.js update-posts')
   return $.ajax({
-    url: app.host + '/posts/' + id,
+    url: app.host + '/posts/' + data.postId,
     method: 'PATCH',
     headers: {
       Authorizaton: 'Token token=' + app.user.token
     },
     data: {
       'post': {
-        'user_id': app.user.id,
-        'title': title,
-        'content': content
+        'title': data.title,
+        'content': data.content
       }
     }
   })
@@ -131,11 +125,10 @@ module.exports = {
   addUser,
   logInUser,
   logOut,
-  changePassword,
+  resetPassword,
   createPost,
   getPost,
   editPost,
   deletePost
   // createComment
-  // deletePost,
 }
