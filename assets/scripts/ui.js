@@ -7,11 +7,21 @@ const onSignupSuccess = function () {
   console.log('Welcome to my blog!')
   $('#sign-up input').not('.submit-button').val('')
 }
-
-// if encounter error on signup or other functions
-const onError = function (error) {
-  console.log(error)
+// Display a message when signing up with an already taken username
+const signInFailure = function (error) {
+  $('#signInError').removeClass('hidden')
+  console.error(error)
 }
+const signUpFailure = function (error) {
+  $('#joinError').removeClass('hidden')
+  console.error(error)
+}
+// if encounter error on signup or other functions
+const onError = function (data) {
+  // console.log(data.responseJSON.email[0])
+  $('#joinError').show()
+}
+
 // on sigin success
 const onSignInSuccess = function (data) {
   console.log('signed in')
@@ -42,6 +52,7 @@ const resetSuccess = function () {
 // creating posts successfully
 const onPostSucess = function (data) {
   app.data = data.post
+  console.log(data)
   console.log('successfully posted')
   $('#new-post input').not('.submit-button').val('')
 }
@@ -62,7 +73,7 @@ const loopPosts = function (data) {
       '<h2>' + data.posts[i].title + '</h2>' +
       '<p>' + data.posts[i].content + '</p>' +
       '<p>' + data.posts[i].id + '<p>' +
-      '<button class="delete-post" id="' + data.posts[i].id + '" type="button" class="btn">Delete</button>' +
+      '<button class="delete-post" data-id="' + data.posts[i].id + '" id="' + data.posts[i].id + '" type="button" class="btn">Delete</button>' +
       '<button class="edit-post" id="' + data.posts[i].id + '" type="button" class="btn">Edit</button>' +
       '</div>'
     )
@@ -84,13 +95,15 @@ const deletePostSuccess = function (data) {
 }
 module.exports = {
   onSignupSuccess,
-  onError,
   onSignInSuccess,
+  onError,
   onSignOutSuccess,
   editPostSuccess,
   resetSuccess,
   onPostSucess,
   getPostsSuccess,
   onCommentSucess,
-  deletePostSuccess
+  deletePostSuccess,
+  signInFailure,
+  signUpFailure
 }

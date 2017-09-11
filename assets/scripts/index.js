@@ -16,11 +16,10 @@ require('./example')
 const blogEvents = require('./events.js')
 
 $(document).ready(function () {
-  $('#change-password').hide()
+  $('#change-password').show()
   $('#new-post').hide()
   // hiding upon page load
   $('#edit-post').hide()
-  // $('#sign-out').hide()
   $('#sign-up').on('submit', blogEvents.onSignup)
   $('#sign-in').on('submit', blogEvents.onSignIn)
   $('#sign-out').on('submit', blogEvents.onSignOut)
@@ -30,23 +29,24 @@ $(document).ready(function () {
   $('#get-post').click(blogEvents.onGetPostSuccess)
   $('#edit-post').on('submit', blogEvents.onEditPostSuccess)
 
-  // $('.delete-post').click(blogEvents.onDeletePostSuccess)
-  $(document).on('click', '.delete-post', function () {
-    event.preventDefault()
-    const deleteId = $(this).attr('id')
-    blogEvents.onDeletePostSuccess(deleteId)
-  })
-
-  $(document).on('click', '.edit-post', function () {
-    console.log('you have clicked update-posts')
-    event.preventDefault()
-    const editId = $(this).attr('id')
-    $('#postId').val(editId)
-    $('#edit-post').show()
-  })
-  // $('#edit-post').on('submit', blogEvents.onEditSuccess)
-  // $('#delete-post').click(blogEvents.deletePost)
+  // $('#sign-out').click(function () {
+  //   $('#sign-in').show(1000)
+  //   $('#sign-up').show(100)
+  // })
 })
+
+$(document).on('click', '.delete-post', blogEvents.onDeletePostSuccess)
+
+$(document).on('click', '.edit-post', function () {
+  console.log('you have clicked update-posts')
+  event.preventDefault()
+  const editId = $(this).attr('id')
+  $('#postId').val(editId)
+  $('#edit-post').show()
+})
+// $('#edit-post').on('submit', blogEvents.onEditSuccess)
+// $('#delete-post').click(blogEvents.deletePost)
+
 // $(document).on('click', '#commentButton', function () {
 //   blogEvents.onCreateComment()
 // })

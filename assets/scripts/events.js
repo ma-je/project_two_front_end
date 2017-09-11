@@ -10,8 +10,9 @@ const onSignup = function (event) {
 
   blogApi.addUser(data)
     .then(blogUi.onSignupSuccess) // if works
-    .catch(blogUi.onError) // if doesn't work
+    .catch(blogUi.signUpFailure) // if doesn't work
 }
+
 // on sign_in
 
 const onSignIn = function (event) {
@@ -20,7 +21,7 @@ const onSignIn = function (event) {
 
   blogApi.logInUser(data)
     .then(blogUi.onSignInSuccess)
-    .catch(blogUi.onError)
+    .catch(blogUi.signInFailure) // server response
 }
 
 // on sign_out
@@ -38,7 +39,7 @@ const onPasswordReset = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
 
-  blogApi.changePassword(data)
+  blogApi.resetPassword(data)
     .then(blogUi.resetSuccess)
     .catch(blogUi.onError)
 }
@@ -58,10 +59,10 @@ const onCommentSuccess = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   // console.log(data)
-  console.log('commented successfully')
+  // console.log('commented successfully')
   blogApi.newComment(data)
     .then(blogUi.commentSuccess)
-    .catch(blogUi.onError)
+    .catch(blogUi.joinError)
 }
 // get post
 const onGetPostSuccess = function (event) {
@@ -74,22 +75,19 @@ const onGetPostSuccess = function (event) {
 // editing post
 const onEditPostSuccess = function (event) {
   event.preventDefault()
-  // const data = getFormFields(this)
-  const title = $('#edit-post-title').val()
-  const content = $('#edit-post-content').val()
-  const id = $('#edit-post-id').val()
+  const data = getFormFields(event.target)
   console.log('you have reached events.js update-posts')
   // console.log(data)
-  blogApi.editPost(title, content, id)
+  blogApi.editPost(data)
     .then(blogUi.editPostSuccess)
     .catch(blogUi.onError)
 }
 // delete posts
 
-const onDeletePostSuccess = function (deleteId) {
+const onDeletePostSuccess = function (event) {
   // let post_id = $('#postId').val()
-  console.log(deleteId)
-  blogApi.deletePost(deleteId)
+  console.log(event.target.dataset.id)
+  blogApi.deletePost(event.target.dataset.id)
     .then(blogUi.DeletPostSuccess)
     .catch(blogUi.onError)
 }

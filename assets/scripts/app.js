@@ -1,4 +1,5 @@
+
 module.exports = {
   host: 'http://localhost:4741'
-// need to check if this is the right location
+  // host: 'https://project-two-blog.herokuapp.com/'
 }
