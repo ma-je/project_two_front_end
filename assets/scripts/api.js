@@ -76,18 +76,30 @@ const getPost = function () {
   })
 }
 // edit posts
+/*
 const editPost = function (data) {
   // console.log('you have reached api.js update-posts')
   return $.ajax({
-    url: app.host + '/posts/' + data.postId,
+    url: app.host + '/posts/' + data.post.id,
     method: 'PATCH',
     headers: {
       Authorizaton: 'Token token=' + app.user.token
     },
+    data
+  })
+}
+*/
+const editPost = function (data) {
+  return $.ajax({
+    url: app.host + '/posts/' + data.post.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
     data: {
       'post': {
-        'title': data.title,
-        'content': data.content
+        'title': data.post.title,
+        'content': data.post.content
       }
     }
   })

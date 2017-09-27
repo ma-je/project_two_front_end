@@ -6,12 +6,10 @@ const blogEvents = require('./events.js')
 const onSignupSuccess = function () {
   console.log('Welcome to my blog!')
   $('#sign-up input').not('.submit-button').val('')
+  $('#sign-up').hide()
+  $('#sign-in').show()
 }
-// Display a message when signing up with an already taken username
-const signInFailure = function (error) {
-  $('#signInError').removeClass('hidden')
-  console.error(error)
-}
+// Display a message when signing up with an already taken username or bad password
 const signUpFailure = function (error) {
   $('#joinError').removeClass('hidden')
   console.error(error)
@@ -38,11 +36,20 @@ const onSignInSuccess = function (data) {
     // $('#create-comment').show()
     // $('#create-comment').hide()
   }
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#sign-out').show()
+  $('#get-post').show()
+}
+const signInFailure = function (error) {
+  $('#signInError').removeClass('hidden')
+  console.error(error)
 }
 // on sign out
 const onSignOutSuccess = function (data) {
   console.log(data)
   console.log('signed out')
+  $('#sign-out').hide()
 }
 
 // resettting/changing the password

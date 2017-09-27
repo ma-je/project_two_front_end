@@ -7,6 +7,9 @@ const app = require('./app.js')
 const onSignup = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
+  if (data.credentials.password !== data.credentials.password_confirmation) {
+    $('.joinError').show()
+  }
 
   blogApi.addUser(data)
     .then(blogUi.onSignupSuccess) // if works
@@ -76,8 +79,6 @@ const onGetPostSuccess = function (event) {
 const onEditPostSuccess = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('you have reached events.js update-posts')
-  // console.log(data)
   blogApi.editPost(data)
     .then(blogUi.editPostSuccess)
     .catch(blogUi.onError)
@@ -85,8 +86,6 @@ const onEditPostSuccess = function (event) {
 // delete posts
 
 const onDeletePostSuccess = function (event) {
-  // let post_id = $('#postId').val()
-  console.log(event.target.dataset.id)
   blogApi.deletePost(event.target.dataset.id)
     .then(blogUi.DeletPostSuccess)
     .catch(blogUi.onError)
