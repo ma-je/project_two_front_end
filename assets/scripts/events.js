@@ -6,14 +6,16 @@ const app = require('./app.js')
 // on successful signup
 const onSignup = function (event) {
   event.preventDefault()
-  const data = getFormFields(this)
-  if (data.credentials.password !== data.credentials.password_confirmation) {
-    $('.joinError').show()
+  const data = getFormFields(event.target)
+  console.log(data)
+  if (data.credentials.password === data.credentials.password_confirmation) {
+    blogApi.addUser(data)
+      .then(blogUi.onSignupSuccess) // if works
+      .catch(blogUi.signUpFailure) // if doesn't work
+  } else {
+    blogUi.signUpFailure()
   }
-
-  blogApi.addUser(data)
-    .then(blogUi.onSignupSuccess) // if works
-    .catch(blogUi.signUpFailure) // if doesn't work
+  // going to have some error popping saying passwords dont match
 }
 
 // on sign_in
@@ -51,8 +53,9 @@ const onPasswordReset = function (event) {
 const onPostSuccess = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log(data)
-  console.log('made it to events page')
+  // console.log(data)
+  // console.log('made it to events page')
+  $('.new-post input').not('.submit-button').val('')
   blogApi.createPost(data)
     .then(blogUi.onPostSuccess)
     .catch(blogUi.onError)
