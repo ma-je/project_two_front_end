@@ -34,6 +34,8 @@ const onSignInSuccess = function (data) {
     $('#new-post').show()
   } else {
     $('#new-post').hide()
+    $('.edit-post').hide()
+    $('.delete-post').hide()
     // $('#create-comment').show()
     // $('#create-comment').hide()
   }
@@ -87,11 +89,20 @@ const loopPosts = function (data) {
       '<div> ' +
       '<h2>' + data.posts[i].title + '</h2>' +
       '<p>' + data.posts[i].content + '</p>' +
-      '<p>' + data.posts[i].id + '<p>' +
+      '<p class="number">' + data.posts[i].id + '<p>' +
       '<button class="delete-post" data-id="' + data.posts[i].id + '" id="' + data.posts[i].id + '" type="button" class="btn">Delete</button>' +
       '<button class="edit-post" id="' + data.posts[i].id + '" type="button" class="btn">Edit</button>' +
       '</div>'
     )
+  }
+  const admin = app.user.admin
+  if (admin === true) {
+    $('#new-post').show()
+  } else {
+    $('#new-post').hide()
+    $('.edit-post').hide()
+    $('.delete-post').hide()
+    $('.number').hide()
   }
 }
 
