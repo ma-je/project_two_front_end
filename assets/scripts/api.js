@@ -83,23 +83,24 @@ const editPost = function (data) {
     url: app.host + '/posts/' + data.post.id,
     method: 'PATCH',
     headers: {
-      Authorizaton: 'Token token=' + app.user.token
+      Authorization: 'Token token=' + app.user.token
     },
     data
   })
 }
 */
 const editPost = function (data) {
+  console.log('edit post' + data.postId)
   return $.ajax({
-    url: app.host + '/posts/' + data.post.id,
+    url: app.host + '/posts/' + data.postId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
     data: {
       'post': {
-        'title': data.post.title,
-        'content': data.post.content
+        'title': data.title,
+        'content': data.content
       }
     }
   })

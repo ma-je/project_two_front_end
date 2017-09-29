@@ -16,7 +16,7 @@ require('./example')
 const blogEvents = require('./events.js')
 
 $(document).ready(function () {
-  // $('#sign-in').hide()
+  $('#sign-in').hide()
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#get-post').hide()
