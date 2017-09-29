@@ -6,7 +6,7 @@ This Blog doesn't have any particular focus; It is simply a place for the blogge
 
 This platform was created for someone who likes to share their perspectives on various topics.
 
-This Blog allows only one user (the Admin) to post any articles. Perhaps at a later date, other users will be allowed to post. When you land on the page, the post article form is not accessible. If you are a registered admin user, you will see the form. For now, only the admin.
+This Blog allows only one user (the Admin) to post any articles. Perhaps at a later date, other users will be allowed to post. When you land on the page, the post article form is not accessible. If you are a registered admin user, you will see the form. For now, only the admin. The admin credentials are email= "mmonteiro401@gmail.com" password= "test".
 
 The original intent was to allow anyone to read the Blog, however, only subscribed users can post a comment. Due to time constraints, this functionality had to be tabled. The plan is to revisit this at a later date.
 
