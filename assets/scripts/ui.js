@@ -4,15 +4,16 @@ const blogEvents = require('./events.js')
 
 // if successfully signed up
 const onSignupSuccess = function () {
-  console.log('Welcome to my blog!')
-  $('#sign-up input').not('.submit-button').val('')
+  // console.log('Welcome to my blog!')
   $('#sign-up').hide()
   $('#sign-in').show()
+  $('#sign-up input').not('.submit-button').val('')
 }
 // Display a message when signing up with an already taken username or bad password
 const signUpFailure = function (error) {
   $('#joinError').removeClass('hidden')
   console.error(error)
+  $('#sign-up input').not('.submit-button').val('')
 }
 // if encounter error on signup or other functions
 const onError = function (data) {
@@ -22,9 +23,9 @@ const onError = function (data) {
 
 // on sigin success
 const onSignInSuccess = function (data) {
-  console.log('signed in')
+  // console.log('signed in')
   app.user = data.user
-  console.log(app.user)
+  // console.log(app.user)
   $('#sign-in input').not('.submit-btn').val('')
   // console.log(app.user) // outputs user id, email, token, admin
   const admin = app.user.admin
@@ -47,14 +48,19 @@ const signInFailure = function (error) {
 }
 // on sign out
 const onSignOutSuccess = function (data) {
-  console.log(data)
-  console.log('signed out')
+  // console.log(data)
+  // console.log('signed out')
   $('#sign-out').hide()
 }
 
 // resettting/changing the password
-const resetSuccess = function () {
-  console.log('password changed successfully')
+const resetSuccess = function (data) {
+  console.log(data)
+  // console.log('password changed successfully')
+}
+const resetFailure = function (error) {
+  console.log(error)
+  // console.log('password changed successfully')
 }
 // creating posts successfully
 const onPostSucess = function (data) {
@@ -107,6 +113,7 @@ module.exports = {
   onSignOutSuccess,
   editPostSuccess,
   resetSuccess,
+  resetFailure,
   onPostSucess,
   getPostsSuccess,
   onCommentSucess,

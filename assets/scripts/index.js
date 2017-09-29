@@ -31,20 +31,11 @@ $(document).ready(function () {
   $('#create-comment').on('submit', blogEvents.onCommentSuccess)
   $('#get-post').click(blogEvents.onGetPostSuccess)
   $('#edit-post').on('submit', blogEvents.onEditPostSuccess)
-
-  // $('#sign-out').click(function () {
-  //   $('#sign-in').show(1000)
-  //   $('#sign-up').show(100)
-  // })
 })
 
 $(document).on('click', '.delete-post', blogEvents.onDeletePostSuccess)
 
 $(document).on('click', '.edit-post', function () {
-  //console.log('you have clicked update-posts')
-  //event.preventDefault()
-  //const editId = $(this).attr('id')
-  //$('#postId').val(editId)
   $('#edit-post').show()
 })
 // $('#edit-post').on('submit', blogEvents.onEditSuccess)
