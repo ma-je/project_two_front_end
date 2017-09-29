@@ -41,6 +41,7 @@ const onSignInSuccess = function (data) {
   $('#sign-in').hide()
   $('#sign-out').show()
   $('#get-post').show()
+  $('#change-password').show()
 }
 const signInFailure = function (error) {
   $('#signInError').removeClass('hidden')
