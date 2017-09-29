@@ -55,6 +55,8 @@ const onSignOutSuccess = function (data) {
   // console.log(data)
   // console.log('signed out')
   $('#sign-out').hide()
+  $('#sign-in').show()
+  $('.welcome-msg').addClass('hidden')
 }
 
 // resettting/changing the password
