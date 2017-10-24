@@ -73,7 +73,8 @@ const onPostSucess = function (data) {
   app.data = data.post
   console.log(data)
   console.log('successfully posted')
-  $('#new-post input').not('.submit-button').val('')
+  // $('#new-post').trigger('reset')
+  // $('#new-post').children('input').val('')
 }
 
 // new commentSuccess
@@ -114,8 +115,8 @@ const getPostsSuccess = function (data) {
   $('#get-post').click(loopPosts(data))
 }// edit/update posts
 const editPostSuccess = function (data) {
-  console.log('Post has been edited')
-  console.log('you have reached ui.js update-posts')
+  // console.log('Post has been edited')
+  // console.log('you have reached ui.js update-posts')
 }
 // delete posts
 const deletePostSuccess = function (data) {
