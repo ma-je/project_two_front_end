@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rui's blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+
+<body>
+  <div class="container">
+
+    <!-- <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        </nav>
+    </div> -->
+
+    <div id="what" class="container-fluid bg-1 text-center">
+      <h1 class="margin">Welcome to Rui's Ruminations</h1>
+      <h4>A blog about the news and events Rui has ruminated about this week </h4>
+
+    <a href="https://imgur.com/h79zv9Y"><img src="https://i.imgur.com/h79zv9Y.jpg" title="source: imgur.com" /></a>
+
+      <!-- sign up form -->
+      <form id="sign-up">
+        <fieldset>
+          <legend>Join</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+          <p id='joinError' class='error-message hidden'>Please try again. Username Taken or Passwords Don't Match</p>
+          <input type="submit" class="submit-button" name="submit" value="Join!">
+        </fieldset>
+      </form>
+      <!--sign in -->
+      <form id="sign-in">
+        <fieldset>
+          <legend></legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <p id='signInError' class='error-message hidden'>Invalid Username or Password</p>
+          <input type="submit" class="submit-btn" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+
+<h3 class="welcome-msg hidden">Welcome to my blog. Click the Get Posts button below to read my posts.</h3>
+
+      <!--sign out -->
+      <form id="sign-out">
+        <fieldset>
+          <input type="submit" name="submit" value="Sign out">
+          <p id="sign-out-success" class="hidden">Signed Out!</p>
+        </fieldset>
+      </form>
+      <!--change password -->
+      <form id="change-password">
+        <fieldset>
+          <legend></legend>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <p id='pwdsuccess' class='success-msg hidden'>Password Successfully Changed</p>
+          <p id='pwdError' class='error-msg hidden'>Invalid Password</p>
+          <input type="submit" name="submit" value="Change Password">
+        </fieldset>
+      </form>
+      <!--new post-->
+      <form id="new-post">
+        <fieldset>
+          <legend></legend>
+          <h4>Create New Post</h4></legend>
+          <input type="text" name="title" placeholder="Title">
+          <textarea name="content" id="content" cols="25" rows="3" placeholder="content"></textarea>
+          <input type="submit" name="submit" value="Post">
+        </fieldset>
+      </form>
+      <!--create comments-->
+      <!-- <form id="create-comment">
+        <fieldset>
+            <legend><h4>Leave a Comment</h4></legend> -->
+          <!-- <input type="string" placeholder="Title"> -->
+          <!-- <input type="text" placeholder="add your comments here">
+          <input type="submit" name="submit" value="Submit">
+        </fieldset>
+      </form> -->
+      <!--get posts -->
+
+      <button id="get-post">Get Posts</button>
+
+<!--edit/update posts -->
+      <form id="edit-post">
+        <fieldset>
+          <legend><h4>Edit Post</h4></legend>
+              <input type="text" name="postId" placeholder="ID Number" id="edit-post-id">
+              <input type="text" name="title" placeholder="Title" id="edit-post-title">
+              <textarea name="content" cols="25" rows="3" placeholder=" edit content" id="edit-post-content"></textarea>
+              <input type="submit" name="submit" class="btn-default" value="Submit edits">
+              <input type="hidden" id="postId" name="post[post_id]" value="">
+            </fieldset>
+          </form>
+<!-- delete posts -->
+        <fieldset>
+          <!-- <button id="delete-post" type="button" class="btn">Delete Post</button> -->
+          <br><br>
+          <div class="title">
+            <div class="content">
+        </fieldset>
+        </div>
+
+      <div id="posts-section">
+      </div>
+      </body>
+
+</html>
